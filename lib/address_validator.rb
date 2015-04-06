@@ -9,6 +9,10 @@ require_relative './address_validator/validator'
 module AddressValidator
   class << self
     attr_accessor :config
+
+    def config
+      super.presence || Config.new
+    end
   end
 
   def self.configure(&block)
