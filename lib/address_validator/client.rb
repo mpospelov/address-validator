@@ -7,7 +7,7 @@ module AddressValidator
     format :xml
 
     def initialize
-      @config = AddressValidator.config
+      @config = AddressValidator.get_config
       set_base_uri
     end
 

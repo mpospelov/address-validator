@@ -10,9 +10,10 @@ module AddressValidator
   class << self
     attr_accessor :config
 
-    def config
-      super.presence || Config.new
+    def get_config
+      self.config || Config.new
     end
+    
   end
 
   def self.configure(&block)
