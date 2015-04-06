@@ -38,16 +38,16 @@ module AddressValidator
 
     attr_accessor :name, :street1, :street2, :street3, :city, :state, :zip, :country, :classification
 
-    def initialize(name: name, street1: street1, street2: street2, street3: street3, city: city, state: state, zip: zip, country: country, classification: classification)
-      @name = name
-      @street1 = street1
-      @street2 = street2
-      @street3 = street3
-      @city = city
-      @state = state
-      @zip = zip
-      @country = country
-      @classification = (classification || CLASSIFICATION_UNKNOWN).to_i
+    def initialize(attributes)
+      @name = attributes[:name]
+      @street1 = attributes[:street1]
+      @street2 = attributes[:street2]
+      @street3 = attributes[:street3]
+      @city = attributes[:city]
+      @state = attributes[:state]
+      @zip = attributes[:zip]
+      @country = attributes[:country]
+      @classification = (attributes[:classification] || CLASSIFICATION_UNKNOWN).to_i
     end
 
     def residential?
